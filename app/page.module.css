@@ -1,0 +1,33 @@
+.W_title {
+    font-size: 150px;
+    margin-top: 0;
+}
+
+.T_title {
+    font-size: 150px;
+    text-align: center;
+    position: relative; /* 横棒の位置調整に必要 */
+}
+
+.T_title::before,
+.T_title::after {
+    content: ""; /* 横棒を表示 */
+    display: inline-block;
+    width: 200px; /* 横棒の長さを調整 */
+    height: 5px; /* 横棒の太さを調整 */
+    background-color: black; /* 横棒の色 */
+    vertical-align: middle; /* テキストと横棒の位置を揃える */
+}
+
+.T_title::before {
+    margin-right: 20px; /* テキストとの余白 */
+}
+
+.T_title::after {
+    margin-left: 20px; /* テキストとの余白 */
+}
+
+.M_title {
+    font-size: 150px;
+    text-align: right;
+}
