@@ -37,4 +37,49 @@
     text-align: right;
     margin-top: 0;
     margin-right: 85px;
+    margin-bottom: 200px;
 }
+
+.about {   
+}
+
+.about_title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.about_profile {
+    margin: 185px 350px 400px;
+    font-size: 20px;
+}
+
+.name {
+    margin-bottom: 0px;
+}
+
+.english_name {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.moreLink {
+    text-decoration: none; 
+}
+
+.moreText {
+    color: black;
+}
+  
+.moreText:hover {
+    color: #808080;
+  }
+
+.work_title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 50px;
+    text-align: center;
+}
+  
