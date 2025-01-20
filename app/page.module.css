@@ -7,29 +7,58 @@
 
 .T_title {
     font-size: 150px;
-    text-align: center;
-    position: relative; /* 横棒の位置調整に必要 */
+    text-align: center; /* テキストを中央揃え */
+    position: relative; /* 擬似要素の位置を親要素を基準に設定 */
     margin-right: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
+    line-height: 150px; /* 親要素の高さを調整（文字の高さに合わせる） */
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(20px); /* 下から表示 */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0); /* 元の位置に戻る */
+    opacity: 1;
+  }
+}
+
+/* 横棒が左から広がるアニメーション */
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 300px; /* 横棒の最終的な長さ */
+  }
 }
 
 .T_title::before,
 .T_title::after {
     content: ""; /* 横棒を表示 */
-    display: inline-block;
-    width: 300px;; /* 横棒の長さを調整 */
-    height: 5px; /* 横棒の太さを調整 */
+    display: block; /* 横棒をブロック要素として表示 */
+    height: 3px; /* 横棒の太さを調整 */
     background-color: black; /* 横棒の色 */
-    vertical-align: middle; /* テキストと横棒の位置を揃える */
+    position: absolute; /* 親要素に対して絶対配置 */
+    top: 50%; /* テキストの中央に縦方向で揃える */
+    transform: translateY(-50%); /* 上下方向で中央揃え */
+    width: 0; /* 初期状態では横棒の長さを0に設定 */
+    animation: slideIn 1s forwards; /* 横棒が左から広がるアニメーション */
 }
 
 .T_title::before {
-    margin-right: 20px; /* テキストとの余白 */
+    left: 28%; /* テキストの左側に配置 */
+    margin-left: 20px; /* テキストとの間隔を20pxに設定 */
+    animation-delay: 0.5s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
 }
 
 .T_title::after {
-    margin-left: 20px; /* テキストとの余白 */
+    right: 28%; /* テキストの右側に配置 */
+    margin-right: 20px; /* テキストとの間隔を20pxに設定 */
+    animation-delay: 0.5s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
 }
 
 .M_title {

@@ -1,8 +1,10 @@
 import styles from "./page.module.css"; // CSS Modulesをインポート
 import Header from "./components/Header";
 import Line from "./components/Line";
-import FullWidthBar from "./components/F_line";
 import F_line from "./components/F_line";
+import Welcome from "./components/Welcome";
+import Myportfolio from "./components/Myportfolio";
+import To from "./components/To";
 
 export default function Home() {
     return (
@@ -10,9 +12,9 @@ export default function Home() {
             <section className={styles.top}>
             <Header />
             <div className="title">
-                <h1 className={styles.W_title}>Welcome</h1> {/* CSS Modulesの適用 */}
-                <h1 className={styles.T_title}>To</h1>
-                <h1 className={styles.M_title}>My portfolio</h1>
+                <h1 className={styles.W_title}><Welcome/></h1> {/* CSS Modulesの適用 */}
+                <h1 className={styles.T_title}><To/></h1>
+                <h1 className={styles.M_title}><Myportfolio/></h1>
             </div>
             </section>
 
