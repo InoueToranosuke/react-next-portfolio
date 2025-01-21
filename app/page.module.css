@@ -1,7 +1,10 @@
+.top {
+  background-color: #f3ecd8;
+}
 .W_title {
     font-size: 150px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 25px;
     margin-left: 200px;
 }
 
@@ -52,24 +55,48 @@
 .T_title::before {
     left: 28%; /* テキストの左側に配置 */
     margin-left: 20px; /* テキストとの間隔を20pxに設定 */
-    animation-delay: 0.5s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
+    animation-delay: 1s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
 }
 
 .T_title::after {
     right: 28%; /* テキストの右側に配置 */
     margin-right: 20px; /* テキストとの間隔を20pxに設定 */
-    animation-delay: 0.5s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
+    animation-delay: 1s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
 }
 
 .M_title {
     font-size: 150px;
     text-align: right;
-    margin-top: 0;
+    margin-top: 100px;
     margin-right: 85px;
     margin-bottom: 200px;
 }
 
-.about {   
+
+.W_title,
+.T_title,
+.M_title {
+  font-size: 150px;
+}
+
+@media (max-width: 768px) {
+  .W_title,
+  .T_title,
+  .M_title {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .W_title,
+  .T_title,
+  .M_title {
+    font-size: 50px;
+  }
+}
+
+
+.about {  
 }
 
 .about_title {
@@ -80,18 +107,31 @@
 }
 
 .about_profile {
-    margin: 185px 350px 400px;
-    font-size: 20px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  margin-right: 250px;
+  margin-left: auto;
+  font-size: 20px;
+  max-width: 700px; /* 必要に応じてプロフィール全体の幅を制限 */
 }
 
 .name {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .english_name {
-    margin-top: 0px;
-    margin-bottom: 40px;
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
+
+.profile {
+  text-align: left; /* テキストを左揃え（変更しない場合も可） */
+}
+
+.more {
+  margin-top: 20px; /* ボタンの余白を調整 */
+}
+
 
 .moreLink {
     text-decoration: none; 

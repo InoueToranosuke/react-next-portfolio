@@ -1,13 +1,18 @@
 .container {
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     width: 100vw;
 }
 
 .bar {
-    width: 100%;
+    width: 0; /* 初期状態で幅を0に設定 */
     height: 1px;
     background-color: black;
     border-radius: 2px;
+    transition: width 1s ease-in-out; /* アニメーションをスムーズに実行 */
+}
+
+.animate {
+    width: 70%; /* アニメーション中に横棒が広がる */
 }
