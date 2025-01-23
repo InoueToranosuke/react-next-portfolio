@@ -110,9 +110,15 @@
   margin-top: 200px;
   margin-bottom: 200px;
   margin-right: 250px;
-  margin-left: auto;
+  margin-left: 550px;
   font-size: 20px;
-  max-width: 700px; /* 必要に応じてプロフィール全体の幅を制限 */
+  display: flex; /* 横並びに配置 */
+  align-items: center; /* 縦方向の揃え方 */
+  gap: 300px; /* 要素間のスペース */
+}
+
+.sentences {
+  flex-grow: 1; /* 文字部分を必要なスペースに広げる */
 }
 
 .name {
@@ -125,7 +131,7 @@
 }
 
 .profile {
-  text-align: left; /* テキストを左揃え（変更しない場合も可） */
+  text-align: left; /* テキストを左揃え（変更しない場合も可） */ 
 }
 
 .more {
@@ -143,7 +149,18 @@
   
 .moreText:hover {
     color: #808080;
-  }
+}
+
+.about_img {
+  margin-right: 20px; /* 画像と文字の間のスペース */
+  flex-shrink: 0; /* 画像のサイズを縮小させない */
+}
+
+.about_img img {
+  width: 300px; /* 画像の幅を指定 */
+  height: auto; /* アスペクト比を維持 */
+  border-radius: 10px; /* 画像を少し丸める（任意） */
+}
 
 .work_title {
     margin-top: 0px;
@@ -151,4 +168,25 @@
     font-size: 50px;
     text-align: center;
 }
+
+.work_above {
+  display: flex;
+  flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
+  gap: 300px; /* 子要素間のスペース */
+  margin-left: 400px;
+  margin-right: 400px;
+  position: relative; /* 子要素の位置に影響を与えるため相対配置 */
+  margin-top: 200px;
+}
+
+.divider {
+  position: absolute;
+  top: 0; /* 親要素の上端に配置 */
+  left: 50%; /* 親要素の中央に配置 */
+  width: 2px; /* 縦棒の太さ */
+  height: 80%; /* 親要素の高さに合わせて伸びる */
+  background-color: black; /* 縦棒の色 */
+  transform: translateX(-50%); /* 水平方向に中央揃え */
+}
+
   
