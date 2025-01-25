@@ -6,6 +6,9 @@ import Welcome from "./components/Welcome";
 import Myportfolio from "./components/Myportfolio";
 import To from "./components/To";
 import Window from "./components/Window";
+import Footer from "./components/Footer";
+import Image from "next/image";
+import Whiteline from "./components/whiteline";
 
 
 export default function Home() {
@@ -21,7 +24,7 @@ export default function Home() {
                 </div>
                 </section>
 
-                <section className={styles.about}>
+                <section  className={styles.about}>
                     <div className="title">
                         <F_line />
                         <h1 className={styles.about_title}>About</h1>
@@ -48,7 +51,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className={styles.work}>
+                <section  className={styles.work}>
                     <div className="title">
                         <F_line />
                         <h1 className={styles.work_title}>Work</h1>
@@ -67,7 +70,30 @@ export default function Home() {
                             />   
                         </div>
                         <F_line />
+                        <div className={styles.work_below}>
+                            <Window
+                                work_img="/IMG/program.png"
+                                product_title="MicrosoftCopilot"
+                                explanation="Microsoftの企業プロジェクトに参加しました"
+                            />
+                            <div className={styles.underdivider}></div>
+                            <Window
+                                work_img="/IMG/program.png"
+                                product_title="？？？"
+                                explanation="？？？"
+                            />
+                        </div>
                     </div>
+                </section>
+
+                <section  className={styles.contact}>
+                    <div className="title">
+                        <F_line />
+                        <h1 className={styles.contact_title}>Contact</h1>
+                        <p className={styles.mail}>ktc24a31e0002@edu.kyoto-tech.ac.jp</p>
+                    </div>
+                    <Whiteline/>
+                    <Footer />
                 </section>
             </div>
         </>

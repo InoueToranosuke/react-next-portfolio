@@ -1,5 +1,5 @@
 .top {
-  background-color: #f3ecd8;
+    background-color: #f3ecd8;
 }
 .W_title {
     font-size: 150px;
@@ -19,24 +19,24 @@
 }
 
 @keyframes fadeUp {
-  0% {
+    0% {
     transform: translateY(20px); /* 下から表示 */
     opacity: 0;
-  }
-  100% {
+    }
+    100% {
     transform: translateY(0); /* 元の位置に戻る */
     opacity: 1;
-  }
+    }
 }
 
 /* 横棒が左から広がるアニメーション */
 @keyframes slideIn {
-  0% {
+    0% {
     width: 0;
-  }
-  100% {
+    }
+    100% {
     width: 300px; /* 横棒の最終的な長さ */
-  }
+    }
 }
 
 .T_title::before,
@@ -76,23 +76,23 @@
 .W_title,
 .T_title,
 .M_title {
-  font-size: 150px;
+    font-size: 150px;
 }
 
 @media (max-width: 768px) {
-  .W_title,
-  .T_title,
-  .M_title {
-    font-size: 80px;
-  }
+    .W_title,
+    .T_title,
+    .M_title {
+        font-size: 80px;
+    }
 }
 
 @media (max-width: 480px) {
-  .W_title,
-  .T_title,
-  .M_title {
-    font-size: 50px;
-  }
+    .W_title,
+    .T_title,
+    .M_title {
+        font-size: 50px;
+    }
 }
 
 
@@ -107,14 +107,14 @@
 }
 
 .about_profile {
-  margin-top: 200px;
-  margin-bottom: 200px;
-  margin-right: 250px;
-  margin-left: 550px;
-  font-size: 20px;
-  display: flex; /* 横並びに配置 */
-  align-items: center; /* 縦方向の揃え方 */
-  gap: 300px; /* 要素間のスペース */
+    margin-top: 200px;
+    margin-bottom: 200px;
+    margin-right: 250px;
+    margin-left: 550px;
+    font-size: 20px;
+    display: flex; /* 横並びに配置 */
+    align-items: center; /* 縦方向の揃え方 */
+    gap: 300px; /* 要素間のスペース */
 }
 
 .sentences {
@@ -122,12 +122,12 @@
 }
 
 .name {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .english_name {
-  margin-top: 0px;
-  margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
 
 .profile {
@@ -146,7 +146,7 @@
 .moreText {
     color: black;
 }
-  
+
 .moreText:hover {
     color: #808080;
 }
@@ -170,23 +170,74 @@
 }
 
 .work_above {
-  display: flex;
-  flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
-  gap: 300px; /* 子要素間のスペース */
-  margin-left: 400px;
-  margin-right: 400px;
-  position: relative; /* 子要素の位置に影響を与えるため相対配置 */
-  margin-top: 200px;
+    display: flex;
+    flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
+    gap: 300px; /* 子要素間のスペース */
+    margin-left: 400px;
+    margin-right: 400px;
+    position: relative; /* 子要素の位置に影響を与えるため相対配置 */
+    margin-top: 200px;
+    margin-bottom: 0;
 }
 
 .divider {
-  position: absolute;
-  top: 0; /* 親要素の上端に配置 */
-  left: 50%; /* 親要素の中央に配置 */
-  width: 2px; /* 縦棒の太さ */
-  height: 80%; /* 親要素の高さに合わせて伸びる */
-  background-color: black; /* 縦棒の色 */
-  transform: translateX(-50%); /* 水平方向に中央揃え */
+    position: absolute;
+    top: 0; /* 親要素の上端に配置 */
+    left: 50%; /* 親要素の中央に配置 */
+    width: 2px; /* 縦棒の太さ */
+    height: 80%; /* 親要素の高さに合わせて伸びる */
+    background-color: black; /* 縦棒の色 */
+    transform: translateX(-50%); /* 水平方向に中央揃え */
 }
 
-  
+.work_below {
+    display: flex;
+    flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
+    gap: 300px; /* 子要素間のスペース */
+    margin-left: 400px;
+    margin-right: 400px;
+    position: relative; /* 子要素の位置に影響を与えるため相対配置 */
+    margin-top: 200px;
+}
+
+.underdivider {
+    position: absolute;
+    top: 0; /* 親要素の上端に配置 */
+    left: 50%; /* 親要素の中央に配置 */
+    width: 2px; /* 縦棒の太さ */
+    height: 80%; /* 親要素の高さに合わせて伸びる */
+    background-color: black; /* 縦棒の色 */
+    transform: translateX(-50%); /* 水平方向に中央揃え */
+    
+}
+
+.contact {
+    background-color: #000;
+}
+.contact_title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 50px;
+    font-size: 20px;
+    text-align: left;
+    color: black;
+    text-shadow: 
+    -1px -1px 0 white,  
+    1px -1px 0 white, 
+    -1px 1px 0 white, 
+    1px 1px 0 white; 
+}
+
+.mail {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    text-align: center;
+    color: black;
+    text-shadow: 
+    -1px -1px 0 white,  
+    1px -1px 0 white, 
+    -1px 1px 0 white, 
+    1px 1px 0 white; 
+}
+
