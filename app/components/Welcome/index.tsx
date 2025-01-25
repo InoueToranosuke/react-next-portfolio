@@ -10,7 +10,7 @@ const Welcome: React.FC = () => {
         <span
           key={index}
           className={styles.letter} // styles モジュールから letter クラスを参照
-          style={{ animationDelay: `${index * 0.1}s` }} // 1.5秒の遅延を文字ごとに適用
+          style={{ animationDelay: `${index * 0.1}s` }} // 遅延を文字ごとに適用
         >
           {letter}
         </span>

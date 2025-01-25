@@ -7,8 +7,7 @@
 }
 
 .work_img {
-    width: 100%; /* 画像を親要素の幅に広げる */
-    max-width: 400px; /* 最大幅を指定（必要なら変更） */
+    width: 400px; /* 最大幅を指定（必要なら変更） */
     height: 200px; /* 縦横比を維持 */
     display: block; /* 見えない要素が干渉しないようにする */
     border-radius: 8px; /* 角を丸くする */

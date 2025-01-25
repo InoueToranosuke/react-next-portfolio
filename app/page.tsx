@@ -9,6 +9,7 @@ import Window from "./components/Window";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import Whiteline from "./components/whiteline";
+import Whiteshortline from "./components/Whiteshortline";
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
                 </div>
                 </section>
 
-                <section  className={styles.about}>
+                <section id="about"  className={styles.about}>
                     <div className="title">
                         <F_line />
                         <h1 className={styles.about_title}>About</h1>
@@ -51,7 +52,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section  className={styles.work}>
+                <section id="work" className={styles.work}>
                     <div className="title">
                         <F_line />
                         <h1 className={styles.work_title}>Work</h1>
@@ -72,24 +73,25 @@ export default function Home() {
                         <F_line />
                         <div className={styles.work_below}>
                             <Window
-                                work_img="/IMG/program.png"
+                                work_img="/IMG/Noimage.png"
                                 product_title="MicrosoftCopilot"
                                 explanation="Microsoftの企業プロジェクトに参加しました"
                             />
                             <div className={styles.underdivider}></div>
                             <Window
-                                work_img="/IMG/program.png"
-                                product_title="？？？"
-                                explanation="？？？"
+                                work_img="/IMG/Noimage.png"
+                                product_title="アプリ作成"
+                                explanation="ポーカーのチップ計算アプリを作成中です"
                             />
                         </div>
                     </div>
                 </section>
 
-                <section  className={styles.contact}>
+                <section id="contact" className={styles.contact}>
                     <div className="title">
                         <F_line />
                         <h1 className={styles.contact_title}>Contact</h1>
+                        <Whiteshortline />
                         <p className={styles.mail}>ktc24a31e0002@edu.kyoto-tech.ac.jp</p>
                     </div>
                     <Whiteline/>

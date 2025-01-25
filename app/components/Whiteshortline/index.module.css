@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 50px;
+}
+
+.bar {
+    width: 25%; /* 長さを固定 */
+    height: 1px;
+    background-color: white;
+    border-radius: 2px;
+    opacity: 0; /* 初期状態で透明 */
+    transform: translateX(-50px); /* 初期状態で左にずらす */
+    transition: opacity 1s ease, transform 1s ease; /* アニメーションを設定 */
+}
+
+.animate {
+    opacity: 1; /* 表示 */
+    transform: translateX(0); /* 元の位置にスライドイン */
+}

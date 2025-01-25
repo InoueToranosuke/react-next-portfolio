@@ -1,7 +1,5 @@
-import exp from "constants";
-import Line from "../Line";
 import styles from "./index.module.css";
-import Window_underline from "../Window_underline";
+
 
 type Props = {
     work_img: string;

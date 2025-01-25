@@ -73,32 +73,6 @@
 }
 
 
-.W_title,
-.T_title,
-.M_title {
-    font-size: 150px;
-}
-
-@media (max-width: 768px) {
-    .W_title,
-    .T_title,
-    .M_title {
-        font-size: 80px;
-    }
-}
-
-@media (max-width: 480px) {
-    .W_title,
-    .T_title,
-    .M_title {
-        font-size: 50px;
-    }
-}
-
-
-.about {  
-}
-
 .about_title {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -193,11 +167,12 @@
 .work_below {
     display: flex;
     flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
-    gap: 300px; /* 子要素間のスペース */
+    gap: 350px; /* 子要素間のスペース */
     margin-left: 400px;
     margin-right: 400px;
     position: relative; /* 子要素の位置に影響を与えるため相対配置 */
-    margin-top: 200px;
+    margin-top: 150px;
+    margin-bottom: 30px;
 }
 
 .underdivider {
@@ -211,15 +186,29 @@
     
 }
 
+@media (max-width: 768px) {
+    .work_below {
+        margin-left: 50px;
+        margin-right: 50px;
+        gap: 50px;
+    }
+
+    .window {
+        flex: 1 1 100%; /* 画面幅が狭いときは要素を縦並びにする */
+        max-width: none;
+    }
+}
+
+
 .contact {
     background-color: #000;
 }
 .contact_title {
-    margin-top: 0px;
+    margin-top: 30px;
     margin-bottom: 0px;
     margin-left: 50px;
-    font-size: 20px;
-    text-align: left;
+    font-size: 50px;
+    text-align: center;
     color: black;
     text-shadow: 
     -1px -1px 0 white,  
@@ -231,7 +220,7 @@
 .mail {
     margin-top: 0px;
     margin-bottom: 30px;
-    font-size: 50px;
+    font-size: 90px;
     text-align: center;
     color: black;
     text-shadow: 
@@ -240,4 +229,49 @@
     -1px 1px 0 white, 
     1px 1px 0 white; 
 }
+
+@media (max-width: 768px) {
+    .W_title,
+    .T_title,
+    .M_title {
+        font-size: 80px;
+    }
+
+    .T_title::before,
+    .T_title::after {
+        left: 20%; /* テキストの左側の位置調整 */
+        right: 20%; /* テキストの右側の位置調整 */
+        margin-left: 15px; /* テキストとの間隔を15pxに調整 */
+        margin-right: 15px; /* テキストとの間隔を15pxに調整 */
+    }
+
+  /* 横棒の長さを短くする */
+  .T_title::before,
+  .T_title::after {
+    width: 30%; /* 横棒の長さを30%に設定 */
+  }
+}
+
+@media (max-width: 480px) {
+    .W_title,
+    .T_title,
+    .M_title {
+        font-size: 50px;
+    }
+
+    .T_title::before,
+    .T_title::after {
+        left: 15%; /* テキストの左側の位置調整 */
+        right: 15%; /* テキストの右側の位置調整 */
+        margin-left: 10px; /* テキストとの間隔を10pxに調整 */
+        margin-right: 10px; /* テキストとの間隔を10pxに調整 */
+  }
+
+  /* 横棒の長さをさらに短くする */
+  .T_title::before,
+  .T_title::after {
+    width: 25%; /* 横棒の長さを25%に設定 */
+  }
+}
+
 

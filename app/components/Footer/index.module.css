@@ -1,7 +1,40 @@
-.footer_title {
+.footer {
+    background-color: #000; /* フッターの背景色 */
+    padding: 10px 20px; /* フッターの内側の余白 */
     color: white;
-    font-size: 10px;
-    text-align: center;
-    
+}
 
+.footerContainer {
+    display: flex; /* 横並びに配置 */
+    justify-content: space-between; /* 左右に要素を配置 */
+    align-items: center; /* 垂直方向に中央揃え */
+}
+
+.footer_title {
+    flex: 1; /* 中央揃えの余白確保 */
+    text-align: center; /* 中央に配置 */
+    font-size: 10px; /* フォントサイズ */
+    margin-left: 150px; /* 左側の余白 */
+    font-family: "Noto Serif", serif;
+}
+
+.scrollToTop {
+    color: white;
+    font-size: 20px;
+    cursor: pointer; /* クリック可能なカーソル */
+    margin-left: auto; /* 右端に配置 */
+    font-family: "Noto Serif", serif;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .footerContainer {
+      flex-direction: column; /* 子要素を縦並びに */
+    }
+  
+    .scrollToTop {
+      margin-left: 0; /* 余白をリセット */
+      margin-top: 10px; /* 上に余白を追加 */
+      text-align: center; /* テキストを中央揃え */
+    }
 }
