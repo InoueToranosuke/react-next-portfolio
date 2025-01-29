@@ -73,27 +73,17 @@
 }
 
 
-.about_title {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 50px;
-    text-align: center;
-}
 
 .about_profile {
     margin-top: 200px;
     margin-bottom: 200px;
-    margin-right: 250px;
-    margin-left: 550px;
     font-size: 20px;
     display: flex; /* 横並びに配置 */
     align-items: center; /* 縦方向の揃え方 */
-    gap: 300px; /* 要素間のスペース */
+    justify-content: space-evenly; /* 要素間のスペースを均等にする */
 }
 
-.sentences {
-  flex-grow: 1; /* 文字部分を必要なスペースに広げる */
-}
+
 
 .name {
     margin-bottom: 0px;
@@ -136,12 +126,7 @@
   border-radius: 10px; /* 画像を少し丸める（任意） */
 }
 
-.work_title {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 50px;
-    text-align: center;
-}
+
 
 .work_above {
     display: flex;

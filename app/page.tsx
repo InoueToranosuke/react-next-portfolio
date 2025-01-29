@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Image from "next/image";
 import Whiteline from "./components/whiteline";
 import Whiteshortline from "./components/Whiteshortline";
+import Title from "./components/Title";
 
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
                 <section id="about"  className={styles.about}>
                     <div className="title">
                         <F_line />
-                        <h1 className={styles.about_title}>About</h1>
+                        <Title title="About" />
                         <Line />
                         <div className={styles.about_profile}>
                             <div className={styles.about_img}>
@@ -55,7 +56,7 @@ export default function Home() {
                 <section id="work" className={styles.work}>
                     <div className="title">
                         <F_line />
-                        <h1 className={styles.work_title}>Work</h1>
+                        <Title title="Work" />
                         <Line />
                         <div className={styles.work_above}>
                             <Window
