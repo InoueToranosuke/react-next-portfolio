@@ -1,16 +1,83 @@
-.header {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-    font-family: 'Noto Serif', serif;
-    
+/* ドットメニュー */
+.dotMenu {
+    position: fixed;
+    right: 20px;
+    top: 5%;
+    transform: translateY(-50%);
+    display: none;  /* デフォルトでは非表示 */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.dot {
+    width: 30px;
+    height: 5px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.dot.open {
+    background-color: #fff; /* メニューオープン時の色 */
+}
+
+/* メニュー */
+.menuContent {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100px;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50px; /* ドットからメニューを下に表示 */
+    right: 0;
+}
+
+/* メニューのリスト */
+.menuContent ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.menuContent li {
+    margin-bottom: 20px;
+}
+
+.menuContent a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+.menuContent a:hover {
+    color: #f0f0f0;
+}
+
+/* メニューが開いているときにメニューを表示 */
+.dotMenu.open .menuContent {
+    display: block;
+}
+
+/* メニューが閉じているときにメニューを非表示 */
+.menuContent {
+    display: none;
+}
+
+/* メインメニュー（デフォルトで表示） */
 .ul {
     list-style: none;
     padding-left: 0;
     display: flex;
+    justify-content: flex-end;
     margin: 0;
+    font-family: 'Noto Serif', serif;
 }
 
 .ul li {
@@ -27,3 +94,15 @@
     font-size: 30px;
 }
 
+/* レスポンシブ対応：小さい画面でドットメニューを表示 */
+@media (max-width: 768px) {
+    /* 横並びメニューは非表示 */
+    .ul {
+        display: none;
+    }
+
+    /* ドットメニューを表示 */
+    .dotMenu {
+        display: flex;
+    }
+}

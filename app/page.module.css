@@ -1,6 +1,14 @@
 .top {
     background-color: #f3ecd8;
 }
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 各タイトルのデフォルトスタイル（PC用） */
 .W_title {
     font-size: 150px;
     margin-top: 0;
@@ -10,58 +18,26 @@
 
 .T_title {
     font-size: 150px;
-    text-align: center; /* テキストを中央揃え */
-    position: relative; /* 擬似要素の位置を親要素を基準に設定 */
-    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw; /* 画面サイズに応じて文字と横棒の間隔を調整 */
     margin-top: 50px;
     margin-bottom: 50px;
-    line-height: 150px; /* 親要素の高さを調整（文字の高さに合わせる） */
+    line-height: 150px;
 }
 
-@keyframes fadeUp {
-    0% {
-    transform: translateY(20px); /* 下から表示 */
-    opacity: 0;
-    }
-    100% {
-    transform: translateY(0); /* 元の位置に戻る */
-    opacity: 1;
-    }
-}
-
-/* 横棒が左から広がるアニメーション */
-@keyframes slideIn {
-    0% {
-    width: 0;
-    }
-    100% {
-    width: 300px; /* 横棒の最終的な長さ */
-    }
-}
-
+/* 横棒のデザイン */
 .T_title::before,
 .T_title::after {
-    content: ""; /* 横棒を表示 */
-    display: block; /* 横棒をブロック要素として表示 */
-    height: 3px; /* 横棒の太さを調整 */
-    background-color: black; /* 横棒の色 */
-    position: absolute; /* 親要素に対して絶対配置 */
-    top: 50%; /* テキストの中央に縦方向で揃える */
-    transform: translateY(-50%); /* 上下方向で中央揃え */
-    width: 0; /* 初期状態では横棒の長さを0に設定 */
-    animation: slideIn 1s forwards; /* 横棒が左から広がるアニメーション */
-}
-
-.T_title::before {
-    left: 28%; /* テキストの左側に配置 */
-    margin-left: 20px; /* テキストとの間隔を20pxに設定 */
-    animation-delay: 1s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
-}
-
-.T_title::after {
-    right: 28%; /* テキストの右側に配置 */
-    margin-right: 20px; /* テキストとの間隔を20pxに設定 */
-    animation-delay: 1s; /* 横棒のアニメーション開始遅延（文字アニメーションの後に開始） */
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: black;
+    width: 0; /* 初期状態は横棒なし */
+    max-width: 17vw; /* 画面幅の25%を最大値とする */
+    animation: slideIn 2.5s forwards;
+    animation-delay: 1.2s;
 }
 
 .M_title {
@@ -72,18 +48,94 @@
     margin-bottom: 200px;
 }
 
+/* 文字が浮き上がるアニメーション */
+@keyframes fadeUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 横棒が左から広がるアニメーション */
+@keyframes slideIn {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* レスポンシブ対応 */
+
+/* タブレット（768px〜1024px） */
+@media (max-width: 1024px) {
+    .W_title, .T_title, .M_title {
+        font-size: 100px;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .T_title {
+        font-size: 100px;
+        gap: 4vw;
+    }
+
+    .T_title::before, .T_title::after {
+        max-width: 12vw;
+    }
+}
+
+/* スマホ（768px以下） */
+@media (max-width: 768px) {
+    .W_title, .T_title, .M_title {
+        font-size: 60px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .T_title {
+        font-size: 60px;
+        gap: 3vw;
+    }
+
+    .T_title::before, .T_title::after {
+        max-width: 7vw;
+    }
+}
 
 
 .about_profile {
     margin-top: 200px;
     margin-bottom: 200px;
     font-size: 20px;
-    display: flex; /* 横並びに配置 */
-    align-items: center; /* 縦方向の揃え方 */
-    justify-content: space-evenly; /* 要素間のスペースを均等にする */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap; /* 画面幅が狭くなったら折り返す */
 }
 
+/* 画像エリア */
+.about_img {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
 
+.about_img img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* テキストエリア */
+.sentences {
+    max-width: 500px;
+}
 
 .name {
     margin-bottom: 0px;
@@ -95,16 +147,16 @@
 }
 
 .profile {
-  text-align: left; /* テキストを左揃え（変更しない場合も可） */ 
+    text-align: left;
 }
 
+/* ボタンエリア */
 .more {
-  margin-top: 20px; /* ボタンの余白を調整 */
+    margin-top: 20px;
 }
-
 
 .moreLink {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .moreText {
@@ -115,75 +167,148 @@
     color: #808080;
 }
 
-.about_img {
-  margin-right: 20px; /* 画像と文字の間のスペース */
-  flex-shrink: 0; /* 画像のサイズを縮小させない */
+/* ▼ レスポンシブ対応 ▼ */
+
+/* スマホ（600px以下） */
+@media (max-width: 600px) {
+    .about_profile {
+        flex-direction: column; /* 縦並びにする */
+        text-align: center; /* テキストを中央揃え */
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .about_img {
+        margin-right: 0;
+        margin-bottom: 20px; /* 画像とテキストの間隔 */
+    }
+
+    .about_img img {
+        width: 80%; /* 画像を小さくする */
+    }
+
+    .sentences {
+        max-width: 90%; /* テキストエリアの幅を調整 */
+    }
+
+    .profile {
+        text-align: center;
+    }
 }
 
-.about_img img {
-  width: 300px; /* 画像の幅を指定 */
-  height: auto; /* アスペクト比を維持 */
-  border-radius: 10px; /* 画像を少し丸める（任意） */
+/* タブレット（600px〜1024px） */
+@media (max-width: 1024px) {
+    .about_profile {
+        flex-direction: column; /* タブレットでも縦並び */
+        text-align: center;
+    }
+
+    .about_img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about_img img {
+        width: 250px;
+    }
+
+    .sentences {
+        max-width: 80%;
+    }
+
+    .profile {
+        text-align: center;
+    }
 }
 
 
 
-.work_above {
+.work_above, .work_below {
     display: flex;
-    flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
-    gap: 300px; /* 子要素間のスペース */
+    flex-wrap: wrap;
+    gap: 300px;
     margin-left: 400px;
     margin-right: 400px;
-    position: relative; /* 子要素の位置に影響を与えるため相対配置 */
+    position: relative;
+    justify-content: center;
     margin-top: 200px;
     margin-bottom: 0;
 }
 
-.divider {
+/* 縦の区切り線（デスクトップ時 1920px以上） */
+.divider, .underdivider {
     position: absolute;
-    top: 0; /* 親要素の上端に配置 */
-    left: 50%; /* 親要素の中央に配置 */
-    width: 2px; /* 縦棒の太さ */
-    height: 80%; /* 親要素の高さに合わせて伸びる */
-    background-color: black; /* 縦棒の色 */
-    transform: translateX(-50%); /* 水平方向に中央揃え */
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 80%;
+    background-color: black;
+    transform: translateX(-50%);
 }
 
-.work_below {
-    display: flex;
-    flex-wrap: wrap; /* 子要素が画面幅に応じて折り返されるようにする */
-    gap: 350px; /* 子要素間のスペース */
-    margin-left: 400px;
-    margin-right: 400px;
-    position: relative; /* 子要素の位置に影響を与えるため相対配置 */
-    margin-top: 150px;
-    margin-bottom: 30px;
-}
 
-.underdivider {
-    position: absolute;
-    top: 0; /* 親要素の上端に配置 */
-    left: 50%; /* 親要素の中央に配置 */
-    width: 2px; /* 縦棒の太さ */
-    height: 80%; /* 親要素の高さに合わせて伸びる */
-    background-color: black; /* 縦棒の色 */
-    transform: translateX(-50%); /* 水平方向に中央揃え */
-    
-}
-
-@media (max-width: 768px) {
-    .work_below {
+@media (max-width: 1919px) {
+    .work_above, .work_below {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center;
         margin-left: 50px;
         margin-right: 50px;
         gap: 50px;
+        position: relative;
     }
 
-    .window {
-        flex: 1 1 100%; /* 画面幅が狭いときは要素を縦並びにする */
-        max-width: none;
+    /* 縦線を消して横線に変更 */
+    .divider, .underdivider {
+        width: 80%;  /* 横線の長さ */
+        height: 1px; /* 横線の太さ */
+        background-color: black;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 20px 0;
+        transform: none;
     }
 }
 
+/* タブレット・スマホ共通（1024px以下） */
+@media (max-width: 1024px) {
+    .work_above, .work_below {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center;
+        margin-left: 50px;
+        margin-right: 50px;
+        gap: 50px;
+        position: relative;
+    }
+
+    /* 縦線を削除し、各Window要素の間に横線を追加 */
+    .divider, .underdivider {
+        display: none;
+    }
+
+    /* 各要素間に横線を追加 */
+    .window:not(:last-child)::after {
+        content: "";
+        display: block;
+        width: 80%;
+        height: 2px;
+        background-color: black;
+        margin: 20px auto;
+    }
+}
+
+/* スマホ（600px以下） */
+@media (max-width: 600px) {
+    .work_above, .work_below {
+        margin-left: 20px;
+        margin-right: 20px;
+        gap: 30px;
+    }
+
+    .work_img {
+        width: 90%;
+    }
+}
 
 .contact {
     background-color: #000;
@@ -213,50 +338,6 @@
     1px -1px 0 white, 
     -1px 1px 0 white, 
     1px 1px 0 white; 
-}
-
-@media (max-width: 768px) {
-    .W_title,
-    .T_title,
-    .M_title {
-        font-size: 80px;
-    }
-
-    .T_title::before,
-    .T_title::after {
-        left: 20%; /* テキストの左側の位置調整 */
-        right: 20%; /* テキストの右側の位置調整 */
-        margin-left: 15px; /* テキストとの間隔を15pxに調整 */
-        margin-right: 15px; /* テキストとの間隔を15pxに調整 */
-    }
-
-  /* 横棒の長さを短くする */
-  .T_title::before,
-  .T_title::after {
-    width: 30%; /* 横棒の長さを30%に設定 */
-  }
-}
-
-@media (max-width: 480px) {
-    .W_title,
-    .T_title,
-    .M_title {
-        font-size: 50px;
-    }
-
-    .T_title::before,
-    .T_title::after {
-        left: 15%; /* テキストの左側の位置調整 */
-        right: 15%; /* テキストの右側の位置調整 */
-        margin-left: 10px; /* テキストとの間隔を10pxに調整 */
-        margin-right: 10px; /* テキストとの間隔を10pxに調整 */
-  }
-
-  /* 横棒の長さをさらに短くする */
-  .T_title::before,
-  .T_title::after {
-    width: 25%; /* 横棒の長さを25%に設定 */
-  }
 }
 
 

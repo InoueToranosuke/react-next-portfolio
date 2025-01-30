@@ -1,45 +1,44 @@
 .window {
     display: flex;
-    flex-direction: column; /* 子要素を縦方向に並べる */
-    align-items: center; /* 中央揃え */
-    padding: 20px; /* コンポーネント全体に余白 */
-    margin: 20px 0; /* 上下に余白 */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
 }
 
 .work_img {
     width: 400px;
-    height: 200px; /* 縦横比を維持 */
-    display: block; /* 見えない要素が干渉しないようにする */
-    border-radius: 8px; /* 角を丸くする */
-    margin-bottom: 20px; /* 下に余白を追加 */
-    border: 2px solid black; /* 黒い縁を追加 */
+    height: 200px;
+    display: block;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid black;
 }
-
-
 
 .product_title {
-    font-size: 1.5rem; /* タイトルの文字サイズ */
-    font-weight: bold; /* 太字 */
-    margin-bottom: 30px; /* タイトルと横棒の間隔 */
-    color: #000; /* テキスト色 */
-    text-align: center; /* 中央揃え */
-    position: relative; /* 擬似要素を相対的に配置 */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000;
+    text-align: center;
+    position: relative;
 }
 
+/* 各タイトルの下に横線を追加 */
 .product_title::after {
-    content: ""; /* 擬似要素を表示するための内容を空に設定 */
-    position: absolute; /* 絶対位置指定 */
-    bottom: -10px; /* タイトルの下に配置 */
-    left: 50%; /* 横棒を中央揃え */
-    transform: translateX(-50%); /* 中央揃え補正 */
-    width: 450px; /* 横棒の長さを固定（自由に調整可能） */
-    height: 1px; /* 横棒の高さ */
-    background-color: #000; /* 横棒の色 */
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: 1px;
+    background-color: #000;
 }
 
 .explanation {
-    font-size: 20px; /* 説明文の文字サイズ */
-    line-height: 1.5; /* 行間を調整 */
-    text-align: center; /* 中央揃え */
-    margin-top: 20px; /* 上にスペース */
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 20px;
 }
