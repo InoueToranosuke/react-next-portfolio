@@ -35,7 +35,7 @@
     width: 100px;
     transition: all 0.3s ease;
     position: absolute;
-    top: 50px; /* ドットからメニューを下に表示 */
+    top: -30px; /* ドットからメニューを下に表示 */
     right: 0;
 }
 

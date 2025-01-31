@@ -1,40 +1,74 @@
 .footer {
     background-color: #000; /* フッターの背景色 */
-    padding: 10px 20px; /* フッターの内側の余白 */
+    padding: 20px; /* 余白を増やして見やすく */
     color: white;
+    text-align: center; /* 全体を中央揃え */
 }
 
 .footerContainer {
-    display: flex; /* 横並びに配置 */
-    justify-content: space-between; /* 左右に要素を配置 */
-    align-items: center; /* 垂直方向に中央揃え */
+    display: flex; /* 横並び */
+    justify-content: center; /* 中央配置 */
+    align-items: center;
+    flex-wrap: wrap; /* 必要なら折り返す */
+    gap: 10px; /* 要素間の余白 */
 }
 
 .footer_title {
-    flex: 1; /* 中央揃えの余白確保 */
-    text-align: center; /* 中央に配置 */
-    font-size: 10px; /* フォントサイズ */
-    margin-left: 150px; /* 左側の余白 */
+    font-size: 14px; /* PCでは少し大きめ */
     font-family: "Noto Serif", serif;
+    flex: 1; /* 幅を均等に */
 }
 
 .scrollToTop {
-    color: white;
-    font-size: 20px;
-    cursor: pointer; /* クリック可能なカーソル */
-    margin-left: auto; /* 右端に配置 */
+    font-size: 16px;
+    cursor: pointer; /* クリック可能 */
     font-family: "Noto Serif", serif;
+    padding: 5px 10px; /* クリックしやすく */
+    transition: opacity 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.scrollToTop:hover {
+    opacity: 0.7; /* ホバー時に少し透明に */
 }
 
 /* レスポンシブ対応 */
+@media (max-width: 1024px) {
+    .footer_title {
+        font-size: 12px;
+    }
+    .scrollToTop {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 768px) {
     .footerContainer {
-      flex-direction: column; /* 子要素を縦並びに */
+        flex-direction: column; /* 子要素を縦並びに */
+        align-items: center; /* 中央に配置 */
     }
-  
+
+    .footer_title {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
     .scrollToTop {
-      margin-left: 0; /* 余白をリセット */
-      margin-top: 10px; /* 上に余白を追加 */
-      text-align: center; /* テキストを中央揃え */
+        margin-left: 0; /* 左余白をリセット */
+        margin-top: 10px; /* 上に余白を追加 */
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 15px;
+    }
+
+    .footer_title {
+        font-size: 10px;
+    }
+
+    .scrollToTop {
+        font-size: 12px;
     }
 }

@@ -2,17 +2,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .bar {
-    width: 0; /* 初期状態で幅を0に設定 */
+    width: 0; /* 初期は非表示 */
     height: 1px;
     background-color: white;
     border-radius: 2px;
-    transition: width 1s ease-in-out; /* アニメーションをスムーズに実行 */
+    transition: width 1s ease-in-out;
 }
 
 .animate {
-    width: 70%; /* アニメーション中に横棒が広がる */
+    width: 70%;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 1024px) {
+    .animate {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .animate {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .animate {
+        width: 40%;
+    }
 }

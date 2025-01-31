@@ -1,11 +1,19 @@
-"use client"; // クライアントコンポーネントとして指定（onClickを使用するため）
+"use client"; // クライアントコンポーネントとして指定
 
+import { useEffect, useState } from "react";
 import styles from "./index.module.css";
 
 export default function Footer() {
-    // ページの一番上にスクロールする関数
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true); // クライアントサイドでのみ `true` に設定
+    }, []);
+
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (isClient && typeof window !== "undefined") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     };
 
     return (
