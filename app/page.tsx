@@ -1,16 +1,16 @@
 import styles from "./page.module.css"; // CSS Modulesをインポート
-import Header from "./components/Header";
-import Line from "./components/Line";
-import F_line from "./components/F_line";
-import Welcome from "./components/Welcome";
-import Myportfolio from "./components/Myportfolio";
-import To from "./components/To";
-import Window from "./components/Window";
-import Footer from "./components/Footer";
+import Header from "./_components/Header";
+import Line from "./_components/Line";
+import F_line from "./_components/F_line";
+import Welcome from "./_components/Welcome";
+import Myportfolio from "./_components/Myportfolio";
+import To from "./_components/To";
+import Window from "./_components/Window";
+import Footer from "./_components/Footer";
 import Image from "next/image";
-import Whiteline from "./components/whiteline";
-import Whiteshortline from "./components/Whiteshortline";
-import Title from "./components/Title";
+import Whiteline from "./_components/whiteline";
+import Whiteshortline from "./_components/Whiteshortline";
+import Title from "./_components/Title";
 
 
 export default function Home() {
