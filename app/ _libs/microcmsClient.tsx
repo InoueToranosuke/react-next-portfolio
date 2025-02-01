@@ -20,6 +20,7 @@ export type Blog = {
     updatedAt: string;
     eyecatch: MicroCMSImage | null;
     category: Category | null;
+    explanation: string;
 } & MicroCMSListContent;
 
 
@@ -42,6 +43,9 @@ export const getBlogList = async (queries?: MicroCMSQueries) => {
     return await client.getList<Blog>({
         endpoint: "blogs",
         queries,
+        customRequestInit: {
+            cache: "no-cache",
+        }
     });
 };
 

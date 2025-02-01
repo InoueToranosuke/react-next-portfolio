@@ -13,13 +13,16 @@ import Whiteshortline from "./_components/Whiteshortline";
 import Title from "./_components/Title";
 import MoreLink from "./_components/more";
 import { getBlogList } from "./ _libs/microcmsClient";
+import Divider from "./_components/Divider";
 
 
 export default async function Home() {
     const data = await getBlogList({
-        limit: 1,
+        limit: 4,
         orders: "createdAt",
     });
+
+    console.log(data.contents);
 
     return (
         <>
@@ -66,40 +69,20 @@ export default async function Home() {
                         <Title title="Work" />
                         <Line />
                         <div className={styles.work_above}>
-                            <Window
-                                work_img="/IMG/portfolio.png"
-                                product_title="ポートフォリオ作成"
-                                explanation="学校の授業で自分のポートフォリオを作成しました"
-                            />
                             <ul>
                                 {data.contents.map((content, index) => (
-                                <li key={index}>
-                                    <MoreLink href={`/blog/${content.id}`}/>
+                                    <li key={index}>
+                                        <Window
+                                        work_img={content.eyecatch}
+                                        product_title={content.title}
+                                        explanation={content.explanation}
+                                        href={`/blog/${content.id}`}
+                                    />
                                     </li>
                                 ))}
                             </ul>
-                            
-                            <div className={styles.divider}></div>
-                            <Window
-                                work_img="/IMG/america.png"
-                                product_title="アメリカ海外研修"
-                                explanation="アメリカへ10日間の研修に行きました"
-                            />
-                            <MoreLink />  
-                        </div>
+                            <Divider />
                         <F_line />
-                        <div className={styles.work_below}>
-                            <Window
-                                work_img="/IMG/Noimage.png"
-                                product_title="MicrosoftCopilot"
-                                explanation="Microsoftの企業プロジェクトに参加しました"
-                            />
-                            <div className={styles.underdivider}></div>
-                            <Window
-                                work_img="/IMG/Noimage.png"
-                                product_title="アプリ作成"
-                                explanation="ポーカーのチップ計算アプリを作成中です"
-                            />
                         </div>
                     </div>
                 </section>

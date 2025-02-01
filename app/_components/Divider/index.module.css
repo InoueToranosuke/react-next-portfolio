@@ -1,0 +1,33 @@
+.divider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 80%;
+    background-color: black;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1919px) {
+
+    /* 縦線を消して横線に変更 */
+    .divider {
+        width: 80%;  /* 横線の長さ */
+        height: 1px; /* 横線の太さ */
+        background-color: black;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 20px 0;
+        transform: none;
+    }
+}
+
+/* タブレット・スマホ共通（1024px以下） */
+@media (max-width: 1024px) {
+
+    /* 縦線を削除し、各Window要素の間に横線を追加 */
+    .divider{
+        display: none;
+    };
+}
