@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    margin: 20px 0;
+    padding: 10px 0;
 }
 
 .work_img {

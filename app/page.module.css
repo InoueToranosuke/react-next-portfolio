@@ -223,27 +223,23 @@
 }
 
 
-.work_container {
+
+.work_above {
+    padding: 3rem;
+    margin: 0 1rem 0 1rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    list-style: none;
     gap: 10rem;
+    position: relative;
 }
 
-.work_above, .work_below {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-wrap: wrap;
-    gap: 300px;
-    margin-left: 400px;
-    margin-right: 400px;
-    position: relative;
-    justify-content: center;
-    margin-top: 200px;
-    margin-bottom: 0;
+.work_above > span {
+    display: none;
 }
 
 /* 縦の区切り線（デスクトップ時 1920px以上） */
-.divider, .underdivider {
+.divider {
     position: absolute;
     top: 0;
     left: 50%;
@@ -254,18 +250,56 @@
 }
 
 
-@media (max-width: 1919px) {
-    .work_above, .work_below {
-        flex-direction: column; /* 縦並びに変更 */
-        align-items: center;
-        margin-left: 50px;
-        margin-right: 50px;
-        gap: 50px;
+@media (min-width: 1020px) {
+    .work_above {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
         position: relative;
+        row-gap: 100px;
+    }
+
+    .work_above > span {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 0.75px);
+        display: flex;
+        width: 1.5px;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .work_above > span::before {
+        content: "";
+        height: 47%;
+        width: 100%;
+        display: block;
+        background-color: #000;
+        margin-top: 1rem;
+    }
+
+    .work_above > span::after {
+        content: "";
+        height: 47%;
+        width: 100%;
+        display: block;
+        background-color: #000;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+
+    .work_above::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        display: block;
+        background-color: #000;
     }
 
     /* 縦線を消して横線に変更 */
-    .divider, .underdivider {
+    .divider{
         width: 80%;  /* 横線の長さ */
         height: 1px; /* 横線の太さ */
         background-color: black;
@@ -279,7 +313,7 @@
 
 /* タブレット・スマホ共通（1024px以下） */
 @media (max-width: 1024px) {
-    .work_above, .work_below {
+    .work_above {
         flex-direction: column; /* 縦並びに変更 */
         align-items: center;
         margin-left: 50px;
@@ -288,8 +322,10 @@
         position: relative;
     }
 
+
+
     /* 縦線を削除し、各Window要素の間に横線を追加 */
-    .divider, .underdivider {
+    .divider {
         display: none;
     }
 
@@ -306,7 +342,7 @@
 
 /* スマホ（600px以下） */
 @media (max-width: 600px) {
-    .work_above, .work_below {
+    .work_above {
         margin-left: 20px;
         margin-right: 20px;
         gap: 30px;

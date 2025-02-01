@@ -1,6 +1,15 @@
 body {
   font-family: "Noto Serif", serif;
+  display: flex;
+  background-color: #f3ecd8;
+  flex-direction: column;
 }
+
+main {
+  flex-grow: 1;
+  min-height: 100dvh;
+}
+
 
 .title {
   font-family: "Noto Serif", serif;
