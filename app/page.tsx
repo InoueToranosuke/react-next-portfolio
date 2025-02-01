@@ -11,9 +11,16 @@ import Image from "next/image";
 import Whiteline from "./_components/whiteline";
 import Whiteshortline from "./_components/Whiteshortline";
 import Title from "./_components/Title";
+import MoreLink from "./_components/more";
+import { getBlogList } from "./ _libs/microcmsClient";
 
 
-export default function Home() {
+export default async function Home() {
+    const data = await getBlogList({
+        limit: 1,
+        orders: "createdAt",
+    });
+
     return (
         <>
             <div className="bgc">
@@ -64,12 +71,21 @@ export default function Home() {
                                 product_title="ポートフォリオ作成"
                                 explanation="学校の授業で自分のポートフォリオを作成しました"
                             />
+                            <ul>
+                                {data.contents.map((content, index) => (
+                                <li key={index}>
+                                    <MoreLink href={`/blog/${content.id}`}/>
+                                    </li>
+                                ))}
+                            </ul>
+                            
                             <div className={styles.divider}></div>
                             <Window
                                 work_img="/IMG/america.png"
                                 product_title="アメリカ海外研修"
                                 explanation="アメリカへ10日間の研修に行きました"
-                            />   
+                            />
+                            <MoreLink />  
                         </div>
                         <F_line />
                         <div className={styles.work_below}>

@@ -1,0 +1,16 @@
+.more {
+    margin-top: 20px;
+}
+
+.moreLink {
+    text-decoration: none;
+}
+
+.moreText {
+    color: black;
+    font-size: 30px;
+}
+
+.moreText:hover {
+    color: #808080;
+}

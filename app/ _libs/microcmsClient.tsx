@@ -39,15 +39,18 @@ const client = createClient({
 
 
 export const getBlogList = async (queries?: MicroCMSQueries) => {
-    return await client.get<Blog>({
-        endpoint: "blog",
+    return await client.getList<Blog>({
+        endpoint: "blogs",
         queries,
     });
 };
 
 export const getBlog = async (id: string) => {
     return await client.get<Blog>({
-        endpoint: "blog",
+        endpoint: "blogs",
         contentId: id,
+        customRequestInit: {
+            cache: "no-cache",
+        }
     });
 };
