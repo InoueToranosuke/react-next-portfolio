@@ -223,6 +223,11 @@
 }
 
 
+.work_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+}
 
 .work_above, .work_below {
     display: grid;

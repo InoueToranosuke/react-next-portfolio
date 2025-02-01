@@ -68,22 +68,21 @@ export default async function Home() {
                         <F_line />
                         <Title title="Work" />
                         <Line />
-                        <div className={styles.work_above}>
-                            <ul>
+                            <ul className={styles.work_container}>
                                 {data.contents.map((content, index) => (
                                     <li key={index}>
                                         <Window
-                                        work_img={content.eyecatch}
-                                        product_title={content.title}
-                                        explanation={content.explanation}
-                                        href={`/blog/${content.id}`}
-                                    />
+                                            work_img={content.eyecatch}
+                                            product_title={content.title}
+                                            explanation={content.explanation}
+                                            href={`/blog/${content.id}`}
+                                        />
                                     </li>
+                                    
                                 ))}
                             </ul>
                             <Divider />
                         <F_line />
-                        </div>
                     </div>
                 </section>
 
