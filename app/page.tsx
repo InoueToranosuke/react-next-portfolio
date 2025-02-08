@@ -28,7 +28,6 @@ export default async function Home() {
         <>
             <div className="bgc">
                 <section className={styles.top}>
-                <Header />
                 <div className="title">
                     <h1 className={styles.W_title}><Welcome/></h1> {/* CSS Modulesの適用 */}
                     <h1 className={styles.T_title}><To/></h1>
@@ -77,7 +76,7 @@ export default async function Home() {
                                     </li>
                                 ))}
                             </ul>
-                            <Divider />
+                            
                         </div>
                     </div>
                 </section>

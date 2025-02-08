@@ -37,6 +37,7 @@
     position: absolute;
     top: -30px; /* ドットからメニューを下に表示 */
     right: 0;
+    z-index: 10;
 }
 
 /* メニューのリスト */
