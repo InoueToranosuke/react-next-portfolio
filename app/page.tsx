@@ -53,11 +53,6 @@ export default async function Home() {
                                     京都デザイン＆テクノロジー専門学校ホワイトハッカー専攻に在学中<br/>
                                     情報セキュリティ分野を中心に学んでいます<br/>
                                 </p>
-                                <div className={styles.more}>
-                                    <a href="a" className={styles.moreLink}>
-                                        <p className={styles.moreText}>→More</p>
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>
